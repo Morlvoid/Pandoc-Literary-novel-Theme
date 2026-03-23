@@ -79,7 +79,7 @@ subtitle: "副标题"
 示例：
 
 ```bash
->pandoc example.md -s --toc --embed-resources --standalone -c theme.css -o example.html
+pandoc example.md -s --toc --embed-resources --standalone -c theme.css -o example.html
 ```
 
 

@@ -90,8 +90,8 @@ body {
 /* 正文内容左右边距（仅影响非特殊页面的直接子元素） */
 
 body> :not(.title-page):not(.dedication):not(#TOC):not(.toc):not(#title-block-header) {
-    padding-left: 5cm;
-    padding-right: 5cm;
+    padding-left: 8cm;
+    padding-right: 8cm;
     padding-bottom: 2cm;
 }
 
@@ -137,25 +137,6 @@ h1:first-of-type {
     /* 可选，让网格叠加在背景色上 */
     padding: 8rem 0;
     position: relative;
-    background: /* 纸张纹理（可替换为实际图片） */
-    repeating-linear-gradient(360deg, rgba(0, 0, 0, 0.084) 0px, rgba(0, 0, 0, 0.01) 2px, transparent 2px, transparent 8px), /* 原有网格 */
-    radial-gradient(circle at 20% 40%, #e0e0e0 1px, transparent 1px), /* 底色 */
-    var(--bg-color);
-    background-size: 20px 20px, 20px 20px, auto;
-}
-
-
-/* 书名四周的装饰 */
-
-#title-block-header h1.title::before,
-#title-block-header h1.title::after {
-    content: "";
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 100 Q30 80 20 50 T50 0 Q70 20 80 50 T50 100" fill="none" stroke="%23999" stroke-width="0.5"/></svg>');
-    background-size: contain;
-    opacity: 0.3;
 }
 
 
@@ -172,45 +153,6 @@ h1:first-of-type {
     padding-bottom: 1rem;
     /* 为装饰图案留出空间 */
     display: inline-block;
-}
-
-
-/* 顶部装饰条 */
-
-#title-block-header::before {
-    content: "";
-    position: absolute;
-    top: 15%;
-    left: 10%;
-    width: 80%;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--accent-border), var(--accent-border), transparent);
-}
-
-
-/* 底部装饰条 */
-
-#title-block-header::after {
-    content: "";
-    position: absolute;
-    bottom: 15%;
-    left: 10%;
-    width: 80%;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--accent-border), var(--accent-border), transparent);
-}
-
-
-/* 在装饰条两端添加小植物图案（可选） */
-
-#title-block-header::before,
-#title-block-header::after {
-    background-repeat: no-repeat;
-    background-size: 30px 30px;
-    background-position: 0% 50%, 100% 50%;
-    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 100 Q30 80 20 50 T50 0 Q70 20 80 50 T50 100" fill="none" stroke="%23999" stroke-width="0.5"/></svg>'), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 100 Q30 80 20 50 T50 0 Q70 20 80 50 T50 100" fill="none" stroke="%23999" stroke-width="0.5"/></svg>');
-    background-repeat: no-repeat, no-repeat;
-    background-position: left center, right center;
 }
 
 
