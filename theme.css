@@ -1,0 +1,866 @@
+/* ============================================
+   Letter Theme for Pandoc Ebook (responsive)
+   信 - 文艺极简电子书主题 (rem + 媒体查询)
+   ============================================ */
+
+
+/* 基础变量定义 */
+
+:root {
+    --bg-color: #fafafa;
+    --text-color: #2c2c2c;
+    --light-gray: #e8e8e8;
+    --mid-gray: #999;
+    --dark-gray: #555;
+    --accent-border: #d0d0d0;
+    --font-serif: "Noto Serif SC", "Source Han Serif SC", "STSong", "SimSun", serif;
+    --font-sans: "Helvetica Neue", "Arial", sans-serif;
+    --font-mono: "Courier New", monospace;
+    --page-margin: 2.5cm;
+    --line-height: 1.8;
+    --para-indent: 2em;
+}
+
+
+/* 使用 rem 作为基础单位 */
+
+html {
+    font-size: 16px;
+    /* 基础字号，对应手机端 */
+}
+
+
+/* 页面基础设置 */
+
+@page {
+    size: 148mm 210mm;
+    /* A5 尺寸，适合小说阅读 */
+    margin: var(--page-margin);
+    @top-center {
+        content: string(chapter-title);
+        font-family: var(--font-mono);
+        font-size: 8pt;
+        color: var(--mid-gray);
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        border-bottom: 0.5px solid var(--light-gray);
+        padding-bottom: 1em;
+    }
+    @bottom-center {
+        content: counter(page);
+        font-family: var(--font-sans);
+        font-size: 9pt;
+        color: var(--mid-gray);
+        margin-top: 1em;
+    }
+}
+
+@page: first {
+    @top-center {
+        content: none;
+    }
+    @bottom-center {
+        content: none;
+    }
+}
+
+
+/* 基础重置与中文排版优化 */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    line-height: var(--line-height);
+    color: var(--text-color);
+    background: var(--bg-color);
+    text-align: justify;
+    word-wrap: break-word;
+    text-align-last: auto;
+    hanging-punctuation: allow-end;
+    margin: 0 auto;
+}
+
+
+/* 正文内容左右边距（仅影响非特殊页面的直接子元素） */
+
+body> :not(.title-page):not(.dedication):not(#TOC):not(.toc):not(#title-block-header) {
+    padding-left: 5cm;
+    padding-right: 5cm;
+    padding-bottom: 2cm;
+}
+
+
+/* 段落样式 */
+
+p {
+    text-indent: var(--para-indent);
+    margin: 0;
+    orphans: 2;
+    widows: 2;
+}
+
+p+p {
+    margin-top: 0;
+}
+
+
+/* 章节分页 */
+
+h1 {
+    page-break-before: always;
+    string-set: chapter-title content();
+}
+
+h1:first-of-type {
+    page-break-before: auto;
+}
+
+
+/* ========== 标题块样式（Pandoc 自动生成） ========== */
+
+#title-block-header {
+    text-align: center;
+    height: 100vh;
+    margin: 1rem 0;
+    /* 网格背景 */
+    background-image: radial-gradient(circle, #ddd 1px, transparent 1px);
+    background-size: 20px 20px;
+    background-position: center;
+    /* 这里只使用网格背景，不再使用深色 */
+    background-color: var(--bg-color);
+    /* 可选，让网格叠加在背景色上 */
+    padding: 8rem 0;
+    position: relative;
+    background: /* 纸张纹理（可替换为实际图片） */
+    repeating-linear-gradient(360deg, rgba(0, 0, 0, 0.084) 0px, rgba(0, 0, 0, 0.01) 2px, transparent 2px, transparent 8px), /* 原有网格 */
+    radial-gradient(circle at 20% 40%, #e0e0e0 1px, transparent 1px), /* 底色 */
+    var(--bg-color);
+    background-size: 20px 20px, 20px 20px, auto;
+}
+
+
+/* 书名四周的装饰 */
+
+#title-block-header h1.title::before,
+#title-block-header h1.title::after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 100 Q30 80 20 50 T50 0 Q70 20 80 50 T50 100" fill="none" stroke="%23999" stroke-width="0.5"/></svg>');
+    background-size: contain;
+    opacity: 0.3;
+}
+
+
+/* 书名样式 */
+
+#title-block-header h1.title {
+    font-size: 4rem;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    color: var(--text-color);
+    /* 改为主题文字颜色，原来白色可能不显眼，根据背景调整 */
+    margin: 0 0 1rem 0;
+    position: relative;
+    padding-bottom: 1rem;
+    /* 为装饰图案留出空间 */
+    display: inline-block;
+}
+
+
+/* 顶部装饰条 */
+
+#title-block-header::before {
+    content: "";
+    position: absolute;
+    top: 15%;
+    left: 10%;
+    width: 80%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent-border), var(--accent-border), transparent);
+}
+
+
+/* 底部装饰条 */
+
+#title-block-header::after {
+    content: "";
+    position: absolute;
+    bottom: 15%;
+    left: 10%;
+    width: 80%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent-border), var(--accent-border), transparent);
+}
+
+
+/* 在装饰条两端添加小植物图案（可选） */
+
+#title-block-header::before,
+#title-block-header::after {
+    background-repeat: no-repeat;
+    background-size: 30px 30px;
+    background-position: 0% 50%, 100% 50%;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 100 Q30 80 20 50 T50 0 Q70 20 80 50 T50 100" fill="none" stroke="%23999" stroke-width="0.5"/></svg>'), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 100 Q30 80 20 50 T50 0 Q70 20 80 50 T50 100" fill="none" stroke="%23999" stroke-width="0.5"/></svg>');
+    background-repeat: no-repeat, no-repeat;
+    background-position: left center, right center;
+}
+
+
+/* 书名下横线 */
+
+#title-block-header h1.title::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 1px;
+    background: var(--accent-border);
+}
+
+
+/* 书名旁边的植物装饰（右侧） */
+
+#title-block-header h1.title::before {
+    content: "";
+    position: absolute;
+    right: -80px;
+    /* 根据需要调整位置 */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 60px;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 100 Q30 80 20 50 T50 0 Q70 20 80 50 T50 100" fill="none" stroke="%23999" stroke-width="0.5"/></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+
+/* 作者样式 */
+
+#title-block-header p.author {
+    font-size: 1rem;
+    color: var(--dark-gray);
+    margin-top: 10rem;
+    margin-bottom: 6rem;
+    position: relative;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 100 Q30 80 20 50 T50 0 Q70 20 80 50 T50 100" fill="none" stroke="%23999" stroke-width="0.5"/></svg>');
+}
+
+
+/* 封面页样式（手动封面，与标题块可并存） */
+
+
+/* 封面页样式增强版 */
+
+.title-page {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    page-break-after: always;
+    position: relative;
+    background-image: radial-gradient(circle, #e0e0e0 1px, transparent 1px);
+    background-size: 20px 20px;
+    background-position: center;
+    /* 添加微妙阴影 */
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.02);
+}
+
+
+/* 书名外层容器，用于添加装饰 */
+
+.title-page .title {
+    font-size: 2.25rem;
+    font-weight: 300;
+    letter-spacing: 0.5em;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    margin: 0 auto;
+    line-height: 1.4;
+    color: var(--text-color);
+    border-right: 1px solid var(--accent-border);
+    padding-right: 0.5em;
+    position: relative;
+    display: inline-block;
+}
+
+
+/* 书名上方增加一个小装饰（可选） */
+
+.title-page .title::before {
+    content: "❦";
+    position: absolute;
+    top: -2.5em;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1rem;
+    color: var(--mid-gray);
+    opacity: 0.6;
+    letter-spacing: 0;
+}
+
+
+/* 书名下方增加横线装饰（可选） */
+
+.title-page .title::after {
+    content: "";
+    position: absolute;
+    bottom: -1.5em;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 1px;
+    background: var(--accent-border);
+}
+
+
+/* 副标题样式（原本就有，但可微调） */
+
+.title-page .subtitle {
+    font-size: 2rem;
+    letter-spacing: 0.3em;
+    color: #aaa;
+    margin-top: 3em;
+    text-transform: uppercase;
+    writing-mode: horizontal-tb;
+    position: relative;
+    display: inline-block;
+}
+
+
+/* 作者名下方增加波浪条纹 */
+
+.title-page .author {
+    position: absolute;
+    bottom: 2cm;
+    font-size: 1rem;
+    color: var(--dark-gray);
+    letter-spacing: 0.2em;
+    display: inline-block;
+    padding-bottom: 0.3em;
+    background: repeating-linear-gradient( 45deg, #e0e0e0, #e0e0e0 8px, transparent 8px, transparent 16px) bottom no-repeat;
+    background-size: 100% 3px;
+}
+
+
+/* 在封面底部添加另一个植物装饰（可选，与手动封面的 .botanical-decoration 呼应） */
+
+.title-page::after {
+    content: "";
+    position: absolute;
+    bottom: 1cm;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 100px;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 100 Q30 80 20 50 T50 0 Q70 20 80 50 T50 100" fill="none" stroke="%23999" stroke-width="0.5"/></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.2;
+    pointer-events: none;
+}
+
+
+/* 序言/题词页样式 */
+
+.dedication {
+    page-break-after: always;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    padding: 0 2cm;
+    text-align: center;
+    font-size: 1rem;
+    line-height: 2.5;
+    color: var(--dark-gray);
+}
+
+.dedication p {
+    text-indent: 0;
+    margin: 0.5em 0;
+    padding-left: 3cm;
+    padding-right: 3cm;
+}
+
+
+/* 目录页样式 */
+
+#TOC,
+.toc {
+    page-break-after: always;
+    position: relative;
+    background-image: radial-gradient(circle, #ddd 1px, transparent 1px);
+    background-size: 16px 16px;
+    padding: 2cm;
+    padding-bottom: 8cm;
+}
+
+#TOC::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-15deg);
+    font-family: var(--font-mono);
+    font-size: 3rem;
+    color: var(--light-gray);
+    z-index: 0;
+    letter-spacing: 0.1em;
+    font-weight: bold;
+}
+
+#TOC ul,
+.toc ul {
+    list-style: none;
+    position: relative;
+    z-index: 1;
+    width: 60%;
+    margin: 0 auto;
+}
+
+#TOC li,
+.toc li {
+    margin: 1.5em 0;
+    display: flex;
+    align-items: baseline;
+    font-size: 1.2rem;
+    /* 目录字体 1.2rem */
+}
+
+#TOC a,
+.toc a {
+    text-decoration: none;
+    color: #0066cc;
+    display: flex;
+    width: 100%;
+    align-items: baseline;
+    transition: color 0.2s ease;
+}
+
+#TOC a:hover,
+.toc a:hover {
+    color: #cc6600;
+    text-decoration: underline;
+}
+
+#TOC a::after,
+.toc a::after {
+    content: leader('.') target-counter(attr(href), page);
+    flex: 1;
+    text-align: right;
+    color: var(--mid-gray);
+    font-family: var(--font-sans);
+    font-size: 0.5625rem;
+    display: none;
+}
+
+
+/* 章节标题样式 */
+
+h1,
+h2,
+h3 {
+    font-weight: 400;
+    text-align: center;
+    margin: 2em 0 1.5em 0;
+    letter-spacing: 0.2em;
+}
+
+h1 {
+    font-size: 1.125rem;
+    margin-top: 30%;
+    position: relative;
+    padding-bottom: 1em;
+}
+
+h1::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 1px;
+    background: var(--accent-border);
+}
+
+h1 .header-section-number {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.625rem;
+    color: var(--mid-gray);
+    margin-bottom: 1em;
+    letter-spacing: 0.3em;
+}
+
+
+/* 竖排文字工具类 */
+
+.vertical-text {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    height: 300px;
+    margin: 2em auto;
+    letter-spacing: 0.3em;
+    line-height: 2;
+    text-align: left;
+    font-size: 0.75rem;
+}
+
+
+/* 旋转标签 */
+
+.rotated-label {
+    position: absolute;
+    font-family: var(--font-mono);
+    font-size: 0.5rem;
+    letter-spacing: 0.2em;
+    color: var(--mid-gray);
+    text-transform: uppercase;
+    transform: rotate(-90deg);
+    transform-origin: left top;
+    left: -1cm;
+    top: 50%;
+}
+
+
+/* 页眉装饰文字 */
+
+.header-meta {
+    position: running(header-meta);
+    font-family: var(--font-mono);
+    font-size: 0.4375rem;
+    letter-spacing: 0.2em;
+    color: var(--mid-gray);
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 2em;
+}
+
+
+/* 引用块样式 */
+
+blockquote {
+    margin: 2em 3em;
+    padding: 0;
+    border: none;
+    font-size: 0.625rem;
+    color: var(--dark-gray);
+    position: relative;
+}
+
+blockquote::before {
+    content: "";
+    position: absolute;
+    left: -2em;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: var(--light-gray);
+}
+
+blockquote p {
+    font-size: 0.8rem;
+    text-indent: 0;
+    margin: 0.5em 0;
+    line-height: 2;
+}
+
+
+/* 装饰性分隔符 */
+
+.divider {
+    text-align: center;
+    margin: 3em 0;
+    color: var(--mid-gray);
+    font-size: 0.75rem;
+    letter-spacing: 1em;
+    page-break-inside: avoid;
+}
+
+.divider::before {
+    content: "❦";
+}
+
+
+/* 特殊章节样式 */
+
+.chapter-entry {
+    page-break-before: always;
+    position: relative;
+}
+
+.chapter-number {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    /* 修改为 0.9rem */
+    letter-spacing: 0.2em;
+    margin-bottom: 0.5em;
+    display: block;
+}
+
+
+/* 脚注样式 */
+
+.footnotes {
+    font-size: 0.5625rem;
+    color: var(--dark-gray);
+    border-top: 1px solid var(--light-gray);
+    padding-top: 1em;
+    margin-top: 3em;
+}
+
+.footnotes ol {
+    padding-left: 1.5em;
+}
+
+.footnotes li {
+    margin: 0.5em 0;
+}
+
+
+/* 印刷优化 */
+
+@media print {
+    body {
+        background: white;
+    }
+    .no-break {
+        page-break-inside: avoid;
+    }
+    h1,
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+    #TOC a,
+    .toc a {
+        color: black;
+        text-decoration: none;
+    }
+    #TOC a:hover,
+    .toc a:hover {
+        text-decoration: underline;
+    }
+}
+
+
+/* 封面后空白页 */
+
+.blank-page {
+    page-break-after: always;
+    height: 100vh;
+}
+
+
+/* 侧边栏装饰 */
+
+.margin-note {
+    position: absolute;
+    right: -1.5cm;
+    width: 1cm;
+    font-size: 0.5rem;
+    color: var(--mid-gray);
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    letter-spacing: 0.2em;
+}
+
+
+/* 网格背景工具类 */
+
+.grid-bg {
+    background-image: radial-gradient(circle, #ddd 1px, transparent 1px);
+    background-size: 20px 20px;
+    background-position: center top;
+}
+
+
+/* 小型大写字母 */
+
+.small-caps {
+    font-variant: small-caps;
+    letter-spacing: 0.1em;
+    font-size: 0.9em;
+}
+
+
+/* 普通链接（非目录）保持默认 */
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--mid-gray);
+}
+
+
+/* 表格样式 - 居中且自适应宽度 */
+
+table {
+    border-collapse: collapse;
+    margin: 2em auto;
+    /* 上下外边距，左右自动居中 */
+    max-width: 100%;
+    overflow-x: auto;
+    display: block;
+    /* 防止长表格溢出 */
+    font-size: 0.625rem;
+}
+
+th,
+td {
+    padding: 0.8em;
+    text-align: left;
+    border-bottom: 1px solid var(--light-gray);
+    border: 1px solid var(--light-gray);
+    /* 增加边框，更清晰 */
+}
+
+th {
+    font-weight: normal;
+    color: var(--mid-gray);
+    font-family: var(--font-sans);
+    font-size: 0.5625rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background-color: var(--light-gray);
+}
+
+
+/* 图片样式 - 居中 */
+
+img {
+    display: block;
+    margin: 1.5em auto;
+    max-width: 100%;
+    height: auto;
+}
+
+figure {
+    margin: 2em auto;
+    text-align: center;
+    page-break-inside: avoid;
+}
+
+figcaption {
+    font-size: 0.5625rem;
+    color: var(--mid-gray);
+    margin-top: 0.8em;
+    font-family: var(--font-sans);
+    letter-spacing: 0.05em;
+}
+
+
+/* 强调样式 */
+
+em {
+    font-style: normal;
+    font-family: "KaiTi", "STKaiti", "楷体", serif;
+    letter-spacing: 0.05em;
+}
+
+
+/* 行内代码 */
+
+code {
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+    background: var(--light-gray);
+    padding: 0.1em 0.3em;
+    border-radius: 2px;
+    color: var(--dark-gray);
+}
+
+
+/* 预格式化文本 */
+
+pre {
+    background: #f5f5f5;
+    padding: 1.5em;
+    margin: 2em 0;
+    overflow-x: auto;
+    font-size: 0.5625rem;
+    line-height: 1.6;
+    border-left: 2px solid var(--light-gray);
+    page-break-inside: avoid;
+}
+
+
+/* 封面植物装饰 */
+
+.botanical-decoration {
+    position: absolute;
+    bottom: 0cm;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    /* 修改为 200px */
+    height: 200px;
+    opacity: 0.3;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+/* ========== 响应式媒体查询（基于 rem） ========== */
+
+@media screen and (min-width: 768px) {
+    html {
+        font-size: 18px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    html {
+        font-size: 20px;
+    }
+}
+
+
+/* 移动端触控优化 & 正文边距调整 */
+
+@media (max-width: 768px) {
+    #TOC li,
+    .toc li {
+        margin: 1.2em 0;
+    }
+    #TOC a,
+    .toc a {
+        padding: 0.3em 0;
+        display: inline-block;
+    }
+    /* 正文边距缩小为 1cm */
+    body> :not(.title-page):not(.dedication):not(#TOC):not(.toc):not(#title-block-header) {
+        padding-left: 1cm;
+        padding-right: 1cm;
+    }
+    /* 手机端表格字体略小，滚动友好 */
+    table {
+        font-size: 0.5625rem;
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    th,
+    td {
+        padding: 0.5em;
+    }
+}

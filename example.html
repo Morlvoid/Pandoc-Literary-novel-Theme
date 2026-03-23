@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Morlvoid" />
+  <title>日月尘事</title>
+  <style>
+
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <link href="data:text/css,%3Aroot%20%7B%2D%2Dbg%2Dcolor%3A%20%23fafafa%3B%2D%2Dtext%2Dcolor%3A%20%232c2c2c%3B%2D%2Dlight%2Dgray%3A%20%23e8e8e8%3B%2D%2Dmid%2Dgray%3A%20%23999%3B%2D%2Ddark%2Dgray%3A%20%23555%3B%2D%2Daccent%2Dborder%3A%20%23d0d0d0%3B%2D%2Dfont%2Dserif%3A%20%22Noto%20Serif%20SC%22%2C%20%22Source%20Han%20Serif%20SC%22%2C%20%22STSong%22%2C%20%22SimSun%22%2C%20serif%3B%2D%2Dfont%2Dsans%3A%20%22Helvetica%20Neue%22%2C%20%22Arial%22%2C%20sans%2Dserif%3B%2D%2Dfont%2Dmono%3A%20%22Courier%20New%22%2C%20monospace%3B%2D%2Dpage%2Dmargin%3A%202%2E5cm%3B%2D%2Dline%2Dheight%3A%201%2E8%3B%2D%2Dpara%2Dindent%3A%202em%3B%7Dhtml%20%7Bfont%2Dsize%3A%2016px%3B%7D%40page%20%7Bsize%3A%20148mm%20210mm%3Bmargin%3A%20var%28%2D%2Dpage%2Dmargin%29%3B%40top%2Dcenter%20%7Bcontent%3A%20string%28chapter%2Dtitle%29%3Bfont%2Dfamily%3A%20var%28%2D%2Dfont%2Dmono%29%3Bfont%2Dsize%3A%208pt%3Bcolor%3A%20var%28%2D%2Dmid%2Dgray%29%3Bletter%2Dspacing%3A%200%2E2em%3Btext%2Dtransform%3A%20uppercase%3Bborder%2Dbottom%3A%200%2E5px%20solid%20var%28%2D%2Dlight%2Dgray%29%3Bpadding%2Dbottom%3A%201em%3B%7D%40bottom%2Dcenter%20%7Bcontent%3A%20counter%28page%29%3Bfont%2Dfamily%3A%20var%28%2D%2Dfont%2Dsans%29%3Bfont%2Dsize%3A%209pt%3Bcolor%3A%20var%28%2D%2Dmid%2Dgray%29%3Bmargin%2Dtop%3A%201em%3B%7D%7D%40page%3A%20first%20%7B%40top%2Dcenter%20%7Bcontent%3A%20none%3B%7D%40bottom%2Dcenter%20%7Bcontent%3A%20none%3B%7D%7D%2A%20%7Bmargin%3A%200%3Bpadding%3A%200%3Bbox%2Dsizing%3A%20border%2Dbox%3B%7Dbody%20%7Bfont%2Dfamily%3A%20var%28%2D%2Dfont%2Dserif%29%3Bfont%2Dsize%3A%201rem%3Bline%2Dheight%3A%20var%28%2D%2Dline%2Dheight%29%3Bcolor%3A%20var%28%2D%2Dtext%2Dcolor%29%3Bbackground%3A%20var%28%2D%2Dbg%2Dcolor%29%3Btext%2Dalign%3A%20justify%3Bword%2Dwrap%3A%20break%2Dword%3Btext%2Dalign%2Dlast%3A%20auto%3Bhanging%2Dpunctuation%3A%20allow%2Dend%3Bmargin%3A%200%20auto%3B%7Dbody%3E%20%3Anot%28%2Etitle%2Dpage%29%3Anot%28%2Ededication%29%3Anot%28%23TOC%29%3Anot%28%2Etoc%29%3Anot%28%23title%2Dblock%2Dheader%29%20%7Bpadding%2Dleft%3A%205cm%3Bpadding%2Dright%3A%205cm%3Bpadding%2Dbottom%3A%202cm%3B%7Dp%20%7Btext%2Dindent%3A%20var%28%2D%2Dpara%2Dindent%29%3Bmargin%3A%200%3Borphans%3A%202%3Bwidows%3A%202%3B%7Dp%2Bp%20%7Bmargin%2Dtop%3A%200%3B%7Dh1%20%7Bpage%2Dbreak%2Dbefore%3A%20always%3Bstring%2Dset%3A%20chapter%2Dtitle%20content%28%29%3B%7Dh1%3Afirst%2Dof%2Dtype%20%7Bpage%2Dbreak%2Dbefore%3A%20auto%3B%7D%23title%2Dblock%2Dheader%20%7Btext%2Dalign%3A%20center%3Bheight%3A%20100vh%3Bmargin%3A%201rem%200%3Bbackground%2Dimage%3A%20radial%2Dgradient%28circle%2C%20%23ddd%201px%2C%20transparent%201px%29%3Bbackground%2Dsize%3A%2020px%2020px%3Bbackground%2Dposition%3A%20center%3Bbackground%2Dcolor%3A%20var%28%2D%2Dbg%2Dcolor%29%3Bpadding%3A%208rem%200%3Bposition%3A%20relative%3Bbackground%3A%20repeating%2Dlinear%2Dgradient%28360deg%2C%20rgba%280%2C%200%2C%200%2C%200%2E084%29%200px%2C%20rgba%280%2C%200%2C%200%2C%200%2E01%29%202px%2C%20transparent%202px%2C%20transparent%208px%29%2C%20radial%2Dgradient%28circle%20at%2020%25%2040%25%2C%20%23e0e0e0%201px%2C%20transparent%201px%29%2C%20var%28%2D%2Dbg%2Dcolor%29%3Bbackground%2Dsize%3A%2020px%2020px%2C%2020px%2020px%2C%20auto%3B%7D%23title%2Dblock%2Dheader%20h1%2Etitle%3A%3Abefore%2C%23title%2Dblock%2Dheader%20h1%2Etitle%3A%3Aafter%20%7Bcontent%3A%20%22%22%3Bposition%3A%20absolute%3Bwidth%3A%2030px%3Bheight%3A%2030px%3Bbackground%2Dimage%3A%20url%28%27data%3Aimage%2Fsvg%2Bxml%2C%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww%2Ew3%2Eorg%2F2000%2Fsvg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Cpath%20d%3D%22M50%20100%20Q30%2080%2020%2050%20T50%200%20Q70%2020%2080%2050%20T50%20100%22%20fill%3D%22none%22%20stroke%3D%22%2523999%22%20stroke%2Dwidth%3D%220%2E5%22%2F%3E%3C%2Fsvg%3E%27%29%3Bbackground%2Dsize%3A%20contain%3Bopacity%3A%200%2E3%3B%7D%23title%2Dblock%2Dheader%20h1%2Etitle%20%7Bfont%2Dsize%3A%204rem%3Bfont%2Dweight%3A%20300%3Bletter%2Dspacing%3A%200%2E2em%3Bcolor%3A%20var%28%2D%2Dtext%2Dcolor%29%3Bmargin%3A%200%200%201rem%200%3Bposition%3A%20relative%3Bpadding%2Dbottom%3A%201rem%3Bdisplay%3A%20inline%2Dblock%3B%7D%23title%2Dblock%2Dheader%3A%3Abefore%20%7Bcontent%3A%20%22%22%3Bposition%3A%20absolute%3Btop%3A%2015%25%3Bleft%3A%2010%25%3Bwidth%3A%2080%25%3Bheight%3A%201px%3Bbackground%3A%20linear%2Dgradient%2890deg%2C%20transparent%2C%20var%28%2D%2Daccent%2Dborder%29%2C%20var%28%2D%2Daccent%2Dborder%29%2C%20transparent%29%3B%7D%23title%2Dblock%2Dheader%3A%3Aafter%20%7Bcontent%3A%20%22%22%3Bposition%3A%20absolute%3Bbottom%3A%2015%25%3Bleft%3A%2010%25%3Bwidth%3A%2080%25%3Bheight%3A%201px%3Bbackground%3A%20linear%2Dgradient%2890deg%2C%20transparent%2C%20var%28%2D%2Daccent%2Dborder%29%2C%20var%28%2D%2Daccent%2Dborder%29%2C%20transparent%29%3B%7D%23title%2Dblock%2Dheader%3A%3Abefore%2C%23title%2Dblock%2Dheader%3A%3Aafter%20%7Bbackground%2Drepeat%3A%20no%2Drepeat%3Bbackground%2Dsize%3A%2030px%2030px%3Bbackground%2Dposition%3A%200%25%2050%25%2C%20100%25%2050%25%3Bbackground%2Dimage%3A%20url%28%27data%3Aimage%2Fsvg%2Bxml%2C%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww%2Ew3%2Eorg%2F2000%2Fsvg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Cpath%20d%3D%22M50%20100%20Q30%2080%2020%2050%20T50%200%20Q70%2020%2080%2050%20T50%20100%22%20fill%3D%22none%22%20stroke%3D%22%2523999%22%20stroke%2Dwidth%3D%220%2E5%22%2F%3E%3C%2Fsvg%3E%27%29%2C%20url%28%27data%3Aimage%2Fsvg%2Bxml%2C%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww%2Ew3%2Eorg%2F2000%2Fsvg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Cpath%20d%3D%22M50%20100%20Q30%2080%2020%2050%20T50%200%20Q70%2020%2080%2050%20T50%20100%22%20fill%3D%22none%22%20stroke%3D%22%2523999%22%20stroke%2Dwidth%3D%220%2E5%22%2F%3E%3C%2Fsvg%3E%27%29%3Bbackground%2Drepeat%3A%20no%2Drepeat%2C%20no%2Drepeat%3Bbackground%2Dposition%3A%20left%20center%2C%20right%20center%3B%7D%23title%2Dblock%2Dheader%20h1%2Etitle%3A%3Aafter%20%7Bcontent%3A%20%22%22%3Bposition%3A%20absolute%3Bbottom%3A%200%3Bleft%3A%2050%25%3Btransform%3A%20translateX%28%2D50%25%29%3Bwidth%3A%2080px%3Bheight%3A%201px%3Bbackground%3A%20var%28%2D%2Daccent%2Dborder%29%3B%7D%23title%2Dblock%2Dheader%20h1%2Etitle%3A%3Abefore%20%7Bcontent%3A%20%22%22%3Bposition%3A%20absolute%3Bright%3A%20%2D80px%3Btop%3A%2050%25%3Btransform%3A%20translateY%28%2D50%25%29%3Bwidth%3A%2060px%3Bheight%3A%2060px%3Bbackground%2Dimage%3A%20url%28%27data%3Aimage%2Fsvg%2Bxml%2C%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww%2Ew3%2Eorg%2F2000%2Fsvg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Cpath%20d%3D%22M50%20100%20Q30%2080%2020%2050%20T50%200%20Q70%2020%2080%2050%20T50%20100%22%20fill%3D%22none%22%20stroke%3D%22%2523999%22%20stroke%2Dwidth%3D%220%2E5%22%2F%3E%3C%2Fsvg%3E%27%29%3Bbackground%2Dsize%3A%20contain%3Bbackground%2Drepeat%3A%20no%2Drepeat%3Bopacity%3A%200%2E4%3Bpointer%2Devents%3A%20none%3B%7D%23title%2Dblock%2Dheader%20p%2Eauthor%20%7Bfont%2Dsize%3A%201rem%3Bcolor%3A%20var%28%2D%2Ddark%2Dgray%29%3Bmargin%2Dtop%3A%2010rem%3Bmargin%2Dbottom%3A%206rem%3Bposition%3A%20relative%3Bbackground%2Dimage%3A%20url%28%27data%3Aimage%2Fsvg%2Bxml%2C%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww%2Ew3%2Eorg%2F2000%2Fsvg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Cpath%20d%3D%22M50%20100%20Q30%2080%2020%2050%20T50%200%20Q70%2020%2080%2050%20T50%20100%22%20fill%3D%22none%22%20stroke%3D%22%2523999%22%20stroke%2Dwidth%3D%220%2E5%22%2F%3E%3C%2Fsvg%3E%27%29%3B%7D%2Etitle%2Dpage%20%7Bheight%3A%20100vh%3Bdisplay%3A%20flex%3Bflex%2Ddirection%3A%20column%3Bjustify%2Dcontent%3A%20center%3Balign%2Ditems%3A%20center%3Btext%2Dalign%3A%20center%3Bpage%2Dbreak%2Dafter%3A%20always%3Bposition%3A%20relative%3Bbackground%2Dimage%3A%20radial%2Dgradient%28circle%2C%20%23e0e0e0%201px%2C%20transparent%201px%29%3Bbackground%2Dsize%3A%2020px%2020px%3Bbackground%2Dposition%3A%20center%3Bbox%2Dshadow%3A%20inset%200%200%2050px%20rgba%280%2C%200%2C%200%2C%200%2E02%29%3B%7D%2Etitle%2Dpage%20%2Etitle%20%7Bfont%2Dsize%3A%202%2E25rem%3Bfont%2Dweight%3A%20300%3Bletter%2Dspacing%3A%200%2E5em%3Bwriting%2Dmode%3A%20vertical%2Drl%3Btext%2Dorientation%3A%20upright%3Bmargin%3A%200%20auto%3Bline%2Dheight%3A%201%2E4%3Bcolor%3A%20var%28%2D%2Dtext%2Dcolor%29%3Bborder%2Dright%3A%201px%20solid%20var%28%2D%2Daccent%2Dborder%29%3Bpadding%2Dright%3A%200%2E5em%3Bposition%3A%20relative%3Bdisplay%3A%20inline%2Dblock%3B%7D%2Etitle%2Dpage%20%2Etitle%3A%3Abefore%20%7Bcontent%3A%20%22%E2%9D%A6%22%3Bposition%3A%20absolute%3Btop%3A%20%2D2%2E5em%3Bleft%3A%2050%25%3Btransform%3A%20translateX%28%2D50%25%29%3Bfont%2Dsize%3A%201rem%3Bcolor%3A%20var%28%2D%2Dmid%2Dgray%29%3Bopacity%3A%200%2E6%3Bletter%2Dspacing%3A%200%3B%7D%2Etitle%2Dpage%20%2Etitle%3A%3Aafter%20%7Bcontent%3A%20%22%22%3Bposition%3A%20absolute%3Bbottom%3A%20%2D1%2E5em%3Bleft%3A%2050%25%3Btransform%3A%20translateX%28%2D50%25%29%3Bwidth%3A%2060px%3Bheight%3A%201px%3Bbackground%3A%20var%28%2D%2Daccent%2Dborder%29%3B%7D%2Etitle%2Dpage%20%2Esubtitle%20%7Bfont%2Dsize%3A%202rem%3Bletter%2Dspacing%3A%200%2E3em%3Bcolor%3A%20%23aaa%3Bmargin%2Dtop%3A%203em%3Btext%2Dtransform%3A%20uppercase%3Bwriting%2Dmode%3A%20horizontal%2Dtb%3Bposition%3A%20relative%3Bdisplay%3A%20inline%2Dblock%3B%7D%2Etitle%2Dpage%20%2Eauthor%20%7Bposition%3A%20absolute%3Bbottom%3A%202cm%3Bfont%2Dsize%3A%201rem%3Bcolor%3A%20var%28%2D%2Ddark%2Dgray%29%3Bletter%2Dspacing%3A%200%2E2em%3Bdisplay%3A%20inline%2Dblock%3Bpadding%2Dbottom%3A%200%2E3em%3Bbackground%3A%20repeating%2Dlinear%2Dgradient%28%2045deg%2C%20%23e0e0e0%2C%20%23e0e0e0%208px%2C%20transparent%208px%2C%20transparent%2016px%29%20bottom%20no%2Drepeat%3Bbackground%2Dsize%3A%20100%25%203px%3B%7D%2Etitle%2Dpage%3A%3Aafter%20%7Bcontent%3A%20%22%22%3Bposition%3A%20absolute%3Bbottom%3A%201cm%3Bleft%3A%2050%25%3Btransform%3A%20translateX%28%2D50%25%29%3Bwidth%3A%20100px%3Bheight%3A%20100px%3Bbackground%2Dimage%3A%20url%28%27data%3Aimage%2Fsvg%2Bxml%2C%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww%2Ew3%2Eorg%2F2000%2Fsvg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Cpath%20d%3D%22M50%20100%20Q30%2080%2020%2050%20T50%200%20Q70%2020%2080%2050%20T50%20100%22%20fill%3D%22none%22%20stroke%3D%22%2523999%22%20stroke%2Dwidth%3D%220%2E5%22%2F%3E%3C%2Fsvg%3E%27%29%3Bbackground%2Dsize%3A%20contain%3Bbackground%2Drepeat%3A%20no%2Drepeat%3Bopacity%3A%200%2E2%3Bpointer%2Devents%3A%20none%3B%7D%2Ededication%20%7Bpage%2Dbreak%2Dafter%3A%20always%3Bdisplay%3A%20flex%3Bflex%2Ddirection%3A%20column%3Bjustify%2Dcontent%3A%20center%3Bheight%3A%20100vh%3Bpadding%3A%200%202cm%3Btext%2Dalign%3A%20center%3Bfont%2Dsize%3A%201rem%3Bline%2Dheight%3A%202%2E5%3Bcolor%3A%20var%28%2D%2Ddark%2Dgray%29%3B%7D%2Ededication%20p%20%7Btext%2Dindent%3A%200%3Bmargin%3A%200%2E5em%200%3Bpadding%2Dleft%3A%203cm%3Bpadding%2Dright%3A%203cm%3B%7D%23TOC%2C%2Etoc%20%7Bpage%2Dbreak%2Dafter%3A%20always%3Bposition%3A%20relative%3Bbackground%2Dimage%3A%20radial%2Dgradient%28circle%2C%20%23ddd%201px%2C%20transparent%201px%29%3Bbackground%2Dsize%3A%2016px%2016px%3Bpadding%3A%202cm%3Bpadding%2Dbottom%3A%208cm%3B%7D%23TOC%3A%3Abefore%20%7Bcontent%3A%20%22%22%3Bposition%3A%20absolute%3Btop%3A%2050%25%3Bleft%3A%2050%25%3Btransform%3A%20translate%28%2D50%25%2C%20%2D50%25%29%20rotate%28%2D15deg%29%3Bfont%2Dfamily%3A%20var%28%2D%2Dfont%2Dmono%29%3Bfont%2Dsize%3A%203rem%3Bcolor%3A%20var%28%2D%2Dlight%2Dgray%29%3Bz%2Dindex%3A%200%3Bletter%2Dspacing%3A%200%2E1em%3Bfont%2Dweight%3A%20bold%3B%7D%23TOC%20ul%2C%2Etoc%20ul%20%7Blist%2Dstyle%3A%20none%3Bposition%3A%20relative%3Bz%2Dindex%3A%201%3Bwidth%3A%2060%25%3Bmargin%3A%200%20auto%3B%7D%23TOC%20li%2C%2Etoc%20li%20%7Bmargin%3A%201%2E5em%200%3Bdisplay%3A%20flex%3Balign%2Ditems%3A%20baseline%3Bfont%2Dsize%3A%201%2E2rem%3B%7D%23TOC%20a%2C%2Etoc%20a%20%7Btext%2Ddecoration%3A%20none%3Bcolor%3A%20%230066cc%3Bdisplay%3A%20flex%3Bwidth%3A%20100%25%3Balign%2Ditems%3A%20baseline%3Btransition%3A%20color%200%2E2s%20ease%3B%7D%23TOC%20a%3Ahover%2C%2Etoc%20a%3Ahover%20%7Bcolor%3A%20%23cc6600%3Btext%2Ddecoration%3A%20underline%3B%7D%23TOC%20a%3A%3Aafter%2C%2Etoc%20a%3A%3Aafter%20%7Bcontent%3A%20leader%28%27%2E%27%29%20target%2Dcounter%28attr%28href%29%2C%20page%29%3Bflex%3A%201%3Btext%2Dalign%3A%20right%3Bcolor%3A%20var%28%2D%2Dmid%2Dgray%29%3Bfont%2Dfamily%3A%20var%28%2D%2Dfont%2Dsans%29%3Bfont%2Dsize%3A%200%2E5625rem%3Bdisplay%3A%20none%3B%7Dh1%2Ch2%2Ch3%20%7Bfont%2Dweight%3A%20400%3Btext%2Dalign%3A%20center%3Bmargin%3A%202em%200%201%2E5em%200%3Bletter%2Dspacing%3A%200%2E2em%3B%7Dh1%20%7Bfont%2Dsize%3A%201%2E125rem%3Bmargin%2Dtop%3A%2030%25%3Bposition%3A%20relative%3Bpadding%2Dbottom%3A%201em%3B%7Dh1%3A%3Aafter%20%7Bcontent%3A%20%22%22%3Bposition%3A%20absolute%3Bbottom%3A%200%3Bleft%3A%2050%25%3Btransform%3A%20translateX%28%2D50%25%29%3Bwidth%3A%2060px%3Bheight%3A%201px%3Bbackground%3A%20var%28%2D%2Daccent%2Dborder%29%3B%7Dh1%20%2Eheader%2Dsection%2Dnumber%20%7Bdisplay%3A%20block%3Bfont%2Dfamily%3A%20var%28%2D%2Dfont%2Dmono%29%3Bfont%2Dsize%3A%200%2E625rem%3Bcolor%3A%20var%28%2D%2Dmid%2Dgray%29%3Bmargin%2Dbottom%3A%201em%3Bletter%2Dspacing%3A%200%2E3em%3B%7D%2Evertical%2Dtext%20%7Bwriting%2Dmode%3A%20vertical%2Drl%3Btext%2Dorientation%3A%20mixed%3Bheight%3A%20300px%3Bmargin%3A%202em%20auto%3Bletter%2Dspacing%3A%200%2E3em%3Bline%2Dheight%3A%202%3Btext%2Dalign%3A%20left%3Bfont%2Dsize%3A%200%2E75rem%3B%7D%2Erotated%2Dlabel%20%7Bposition%3A%20absolute%3Bfont%2Dfamily%3A%20var%28%2D%2Dfont%2Dmono%29%3Bfont%2Dsize%3A%200%2E5rem%3Bletter%2Dspacing%3A%200%2E2em%3Bcolor%3A%20var%28%2D%2Dmid%2Dgray%29%3Btext%2Dtransform%3A%20uppercase%3Btransform%3A%20rotate%28%2D90deg%29%3Btransform%2Dorigin%3A%20left%20top%3Bleft%3A%20%2D1cm%3Btop%3A%2050%25%3B%7D%2Eheader%2Dmeta%20%7Bposition%3A%20running%28header%2Dmeta%29%3Bfont%2Dfamily%3A%20var%28%2D%2Dfont%2Dmono%29%3Bfont%2Dsize%3A%200%2E4375rem%3Bletter%2Dspacing%3A%200%2E2em%3Bcolor%3A%20var%28%2D%2Dmid%2Dgray%29%3Btext%2Dalign%3A%20center%3Btext%2Dtransform%3A%20uppercase%3Bmargin%2Dbottom%3A%202em%3B%7Dblockquote%20%7Bmargin%3A%202em%203em%3Bpadding%3A%200%3Bborder%3A%20none%3Bfont%2Dsize%3A%200%2E625rem%3Bcolor%3A%20var%28%2D%2Ddark%2Dgray%29%3Bposition%3A%20relative%3B%7Dblockquote%3A%3Abefore%20%7Bcontent%3A%20%22%22%3Bposition%3A%20absolute%3Bleft%3A%20%2D2em%3Btop%3A%200%3Bbottom%3A%200%3Bwidth%3A%201px%3Bbackground%3A%20var%28%2D%2Dlight%2Dgray%29%3B%7Dblockquote%20p%20%7Bfont%2Dsize%3A%200%2E8rem%3Btext%2Dindent%3A%200%3Bmargin%3A%200%2E5em%200%3Bline%2Dheight%3A%202%3B%7D%2Edivider%20%7Btext%2Dalign%3A%20center%3Bmargin%3A%203em%200%3Bcolor%3A%20var%28%2D%2Dmid%2Dgray%29%3Bfont%2Dsize%3A%200%2E75rem%3Bletter%2Dspacing%3A%201em%3Bpage%2Dbreak%2Dinside%3A%20avoid%3B%7D%2Edivider%3A%3Abefore%20%7Bcontent%3A%20%22%E2%9D%A6%22%3B%7D%2Echapter%2Dentry%20%7Bpage%2Dbreak%2Dbefore%3A%20always%3Bposition%3A%20relative%3B%7D%2Echapter%2Dnumber%20%7Bfont%2Dfamily%3A%20var%28%2D%2Dfont%2Dmono%29%3Bfont%2Dsize%3A%200%2E9rem%3Bletter%2Dspacing%3A%200%2E2em%3Bmargin%2Dbottom%3A%200%2E5em%3Bdisplay%3A%20block%3B%7D%2Efootnotes%20%7Bfont%2Dsize%3A%200%2E5625rem%3Bcolor%3A%20var%28%2D%2Ddark%2Dgray%29%3Bborder%2Dtop%3A%201px%20solid%20var%28%2D%2Dlight%2Dgray%29%3Bpadding%2Dtop%3A%201em%3Bmargin%2Dtop%3A%203em%3B%7D%2Efootnotes%20ol%20%7Bpadding%2Dleft%3A%201%2E5em%3B%7D%2Efootnotes%20li%20%7Bmargin%3A%200%2E5em%200%3B%7D%40media%20print%20%7Bbody%20%7Bbackground%3A%20white%3B%7D%2Eno%2Dbreak%20%7Bpage%2Dbreak%2Dinside%3A%20avoid%3B%7Dh1%2Ch2%2Ch3%20%7Bpage%2Dbreak%2Dafter%3A%20avoid%3B%7D%23TOC%20a%2C%2Etoc%20a%20%7Bcolor%3A%20black%3Btext%2Ddecoration%3A%20none%3B%7D%23TOC%20a%3Ahover%2C%2Etoc%20a%3Ahover%20%7Btext%2Ddecoration%3A%20underline%3B%7D%7D%2Eblank%2Dpage%20%7Bpage%2Dbreak%2Dafter%3A%20always%3Bheight%3A%20100vh%3B%7D%2Emargin%2Dnote%20%7Bposition%3A%20absolute%3Bright%3A%20%2D1%2E5cm%3Bwidth%3A%201cm%3Bfont%2Dsize%3A%200%2E5rem%3Bcolor%3A%20var%28%2D%2Dmid%2Dgray%29%3Bwriting%2Dmode%3A%20vertical%2Drl%3Btext%2Dorientation%3A%20mixed%3Bletter%2Dspacing%3A%200%2E2em%3B%7D%2Egrid%2Dbg%20%7Bbackground%2Dimage%3A%20radial%2Dgradient%28circle%2C%20%23ddd%201px%2C%20transparent%201px%29%3Bbackground%2Dsize%3A%2020px%2020px%3Bbackground%2Dposition%3A%20center%20top%3B%7D%2Esmall%2Dcaps%20%7Bfont%2Dvariant%3A%20small%2Dcaps%3Bletter%2Dspacing%3A%200%2E1em%3Bfont%2Dsize%3A%200%2E9em%3B%7Da%20%7Bcolor%3A%20inherit%3Btext%2Ddecoration%3A%20none%3B%7Da%3Ahover%20%7Bcolor%3A%20var%28%2D%2Dmid%2Dgray%29%3B%7Dtable%20%7Bborder%2Dcollapse%3A%20collapse%3Bmargin%3A%202em%20auto%3Bmax%2Dwidth%3A%20100%25%3Boverflow%2Dx%3A%20auto%3Bdisplay%3A%20block%3Bfont%2Dsize%3A%200%2E625rem%3B%7Dth%2Ctd%20%7Bpadding%3A%200%2E8em%3Btext%2Dalign%3A%20left%3Bborder%2Dbottom%3A%201px%20solid%20var%28%2D%2Dlight%2Dgray%29%3Bborder%3A%201px%20solid%20var%28%2D%2Dlight%2Dgray%29%3B%7Dth%20%7Bfont%2Dweight%3A%20normal%3Bcolor%3A%20var%28%2D%2Dmid%2Dgray%29%3Bfont%2Dfamily%3A%20var%28%2D%2Dfont%2Dsans%29%3Bfont%2Dsize%3A%200%2E5625rem%3Bletter%2Dspacing%3A%200%2E1em%3Btext%2Dtransform%3A%20uppercase%3Bbackground%2Dcolor%3A%20var%28%2D%2Dlight%2Dgray%29%3B%7Dimg%20%7Bdisplay%3A%20block%3Bmargin%3A%201%2E5em%20auto%3Bmax%2Dwidth%3A%20100%25%3Bheight%3A%20auto%3B%7Dfigure%20%7Bmargin%3A%202em%20auto%3Btext%2Dalign%3A%20center%3Bpage%2Dbreak%2Dinside%3A%20avoid%3B%7Dfigcaption%20%7Bfont%2Dsize%3A%200%2E5625rem%3Bcolor%3A%20var%28%2D%2Dmid%2Dgray%29%3Bmargin%2Dtop%3A%200%2E8em%3Bfont%2Dfamily%3A%20var%28%2D%2Dfont%2Dsans%29%3Bletter%2Dspacing%3A%200%2E05em%3B%7Dem%20%7Bfont%2Dstyle%3A%20normal%3Bfont%2Dfamily%3A%20%22KaiTi%22%2C%20%22STKaiti%22%2C%20%22%E6%A5%B7%E4%BD%93%22%2C%20serif%3Bletter%2Dspacing%3A%200%2E05em%3B%7Dcode%20%7Bfont%2Dfamily%3A%20var%28%2D%2Dfont%2Dmono%29%3Bfont%2Dsize%3A%200%2E9em%3Bbackground%3A%20var%28%2D%2Dlight%2Dgray%29%3Bpadding%3A%200%2E1em%200%2E3em%3Bborder%2Dradius%3A%202px%3Bcolor%3A%20var%28%2D%2Ddark%2Dgray%29%3B%7Dpre%20%7Bbackground%3A%20%23f5f5f5%3Bpadding%3A%201%2E5em%3Bmargin%3A%202em%200%3Boverflow%2Dx%3A%20auto%3Bfont%2Dsize%3A%200%2E5625rem%3Bline%2Dheight%3A%201%2E6%3Bborder%2Dleft%3A%202px%20solid%20var%28%2D%2Dlight%2Dgray%29%3Bpage%2Dbreak%2Dinside%3A%20avoid%3B%7D%2Ebotanical%2Ddecoration%20%7Bposition%3A%20absolute%3Bbottom%3A%200cm%3Bleft%3A%2050%25%3Btransform%3A%20translateX%28%2D50%25%29%3Bwidth%3A%20200px%3Bheight%3A%20200px%3Bopacity%3A%200%2E3%3Bbackground%2Dsize%3A%20contain%3Bbackground%2Drepeat%3A%20no%2Drepeat%3B%7D%40media%20screen%20and%20%28min%2Dwidth%3A%20768px%29%20%7Bhtml%20%7Bfont%2Dsize%3A%2018px%3B%7D%7D%40media%20screen%20and%20%28min%2Dwidth%3A%201200px%29%20%7Bhtml%20%7Bfont%2Dsize%3A%2020px%3B%7D%7D%40media%20%28max%2Dwidth%3A%20768px%29%20%7B%23TOC%20li%2C%2Etoc%20li%20%7Bmargin%3A%201%2E2em%200%3B%7D%23TOC%20a%2C%2Etoc%20a%20%7Bpadding%3A%200%2E3em%200%3Bdisplay%3A%20inline%2Dblock%3B%7Dbody%3E%20%3Anot%28%2Etitle%2Dpage%29%3Anot%28%2Ededication%29%3Anot%28%23TOC%29%3Anot%28%2Etoc%29%3Anot%28%23title%2Dblock%2Dheader%29%20%7Bpadding%2Dleft%3A%201cm%3Bpadding%2Dright%3A%201cm%3B%7Dtable%20%7Bfont%2Dsize%3A%200%2E5625rem%3Bdisplay%3A%20block%3Boverflow%2Dx%3A%20auto%3B%2Dwebkit%2Doverflow%2Dscrolling%3A%20touch%3B%7Dth%2Ctd%20%7Bpadding%3A%200%2E5em%3B%7D%7D" rel="stylesheet" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">日月尘事</h1>
+<p class="subtitle">——光与骸骨之间的考古学</p>
+<p class="author">Morlvoid</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#目录" id="toc-目录">目录</a></li>
+<li><a href="#第一章---硝烟中的童年" id="toc-第一章---硝烟中的童年">第一章 - 硝烟中的童年</a></li>
+<li><a href="#第二章---登神之路" id="toc-第二章---登神之路">第二章 -
+登神之路</a></li>
+</ul>
+</nav>
+<div class="title-page">
+<div class="subtitle">
+TEST VER. / FIRST VER.
+</div>
+<h1 class="title">
+日月尘事
+</h1>
+<div class="author">
+Morlvoid
+</div>
+<div class="botanical-decoration">
+
+</div>
+</div>
+<div class="dedication">
+<p>“神不是死去的，<br> 他们只是沉入了自己的深渊。” <br>
+——《日月尘事》终卷·按语<br> <br>
+当最后一缕依附于太阳神像的金箔在风中剥落，我们终于获得了直视深渊的资格。<br></p>
+<p>【日月尘事】本书为无神时代时期，由学者们考据并撰写的一本书，书中记载了2400年前较为全面的太阳神与月亮神的故事。<br></p>
+</div>
+<h1 id="目录">目录</h1>
+<div class="toc">
+<ul>
+<li>001 · 前言</li>
+<li>003 · 第一章 - 硝烟中的童年</li>
+<li>007 · 第二章 - 登神之路</li>
+<li>028 · 附录</li>
+<li>032 · 终章批注</li>
+</ul>
+</div>
+<h4 id="关于神骸的拼图"><strong>关于神骸的拼图</strong></h4>
+<p>阿贝斯（Ábyssos）的二千四百年统治，本质是一场盛大的感官悖论：</p>
+<ul>
+<li><p>他的欢宴金碑下埋着夭折的月亮神 <strong>卡兰纱（Calantha）</strong> 的真名</p></li>
+<li><p>他掷碎的酒杯裂痕里藏着替身 <strong>伊莉丝（Liris）</strong> 的镣铐回声</p></li>
+<li><p>就连他深渊之名 <strong>“泰奥菲卢斯（Theóphilos）”</strong> 的残响，也早已被白发少年 <strong>禾洛（Hērōas）</strong> 临终刻入树皮的月光吞没</p></li>
+</ul>
+<p>我们呈现文献的原则近乎残酷：</p>
+<blockquote>
+<p>让酒商账本记载的 <strong>“酸腐酒渣”</strong> 与神庙金箔镌刻的 <strong>“琼浆天赐”</strong> 并置<br />
+使贵族骨片血书的 <strong>“爬行逃窜”</strong> 直面宫廷诗人赞歌中的 <strong>“神威如日”</strong><br />
+将贫民粗布上 <strong>“锁链仙女”</strong> 的涂鸦，摊开在太阳神自诩 <strong>“宠眷永恒”</strong> 的诏书旁</p>
+</blockquote>
+<p>这种并置本身，即是弑神的仪式。</p>
+<h1 id="第一章---硝烟中的童年">第一章 - 硝烟中的童年</h1>
+<h4 id="人类时期泰奥菲卢斯考据碎片"><strong>【人类时期·泰奥菲卢斯】考据碎片</strong></h4>
+<h4 id="童年陶片-故国遗址">童年陶片 (故国遗址)</h4>
+<p><em>载体：</em> 彩绘陶罐碎片<br />
+<em>内容：</em><br />
+“小菲卢斯今日又偷摘了狄奥尼索斯祭坛的葡萄！被祭司追着跑过整条河岸，赤脚踩着阳光像头小鹿。他大笑把紫果抛向空中：‘接住呀！这比神殿的蜜酒还甜！’”<br />
+<em>学者注：</em> 追逐感官愉悦、无视规则。彩陶鲜亮色调印证其无忧童年。</p>
+<h4 id="流亡者裹尸布日记-边境墓穴">流亡者裹尸布日记 (边境墓穴)</h4>
+<p><em>载体：</em> 炭笔写于亚麻裹尸布内衬<br />
+<em>内容：</em><br />
+“…母亲咳血浸透我后背。雪落进骨缝里，她哼起故乡丰收歌谣。我踢散劫匪点的火堆抢到半块黑面包——真可笑，被神所爱的孩子（Theophilus）在吃死人粮。”<br />
+<em>学者注：</em> 首次出现名字自嘲。浪漫化痛苦（将悲惨经历转化为“血色歌谣”意象）。</p>
+<h4 id="敌国诅咒泥板-战场遗址出土"><strong>敌国诅咒泥板
+(战场遗址出土)</strong></h4>
+<p><em>载体：</em> 烧制粘土板，楔形文字<br />
+<em>内容：</em><br />
+“愿风暴之神撕碎泰奥菲卢斯的港湾！让他们的孩童溺毙在母亲乳汁里！我们拆毁城墙那日，要把海豚浮雕（注：阿贝斯母国城徽）砸成齑粉铺满茅厕！”<br />
+学者注:此泥板出土于阿贝斯母国 <em>瑞吉昂港</em> 废墟。<strong>“海豚城徽”</strong> 与贵族口述一致，印证母国为滨海城邦。诅咒的极端恶意暗示战争残酷性，侧面证明泰奥菲卢斯流亡的必然。</p>
+<h4 id="流亡母子的铜勺铭文-难民营墓群"><strong>流亡母子的铜勺铭文
+(难民营墓群)</strong></h4>
+<p><em>载体：</em> 青铜勺柄刻痕<br />
+<em>内容：</em><br />
+“给菲卢斯：愿此勺丈量你一生温饱。 ——母刻于风沙蔽日之季”<br />
+<em>学者注：</em> X光显示勺内壁有 <strong>“霉麦粥残迹”</strong> 。同位素检测证实母子流亡路线：从滨海瑞吉昂→跨爱琴海→抵达内陆 <em>卡德米亚王国</em> 边境。柄部磨损印证其母临终前长期握持。</p>
+<h4 id="中立国儿童泥偶-卡德米亚城邦集市层"><strong>中立国儿童泥偶
+(卡德米亚城邦集市层)</strong></h4>
+<p><em>载体：</em> 陶土捏制小人，背部刻字<br />
+<em>内容：</em><br />
+“换盐的瑞吉昂男孩，眼睛像落难的海神”<br />
+<em>学者注：</em> 泥偶的 <strong>蓝琉璃眼珠（昂贵进口料）</strong> 与简陋躯干形成反差，反映本地儿童对难民泰奥菲卢斯的矛盾印象——既怜悯又猎奇。</p>
+<h4 id="贵族谱系图的边注-阿贝斯成神后追忆"><strong>贵族谱系图的边注
+(阿贝斯成神后追忆)</strong></h4>
+<p><em>载体：</em> 羊皮卷边缘紫墨水批注<br />
+<em>内容：</em><br />
+“泰奥菲卢斯？哈！那偷渡船底老鼠般的崽子！当年在卡德米亚码头，我亲眼见他为半块霉饼学狗叫。如今倒成太阳神了？诸神真是群瞎子！”<br />
+学者注： 笔迹鉴定出自 <em>卡德米亚王室旁支</em> 贵族。<strong>“学狗叫”</strong> 细节与铜勺的 <strong>“霉麦”</strong> 证据链咬合，揭露神性叙事遮蔽的童年屈辱。</p>
+<h4 id="三足鼎立的势力版图-附考据地图"><strong>三足鼎立的势力版图
+(附考据地图)</strong></h4>
+<table>
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 33%" />
+<col style="width: 47%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong>城邦</strong></th>
+<th><strong>特征</strong></th>
+<th><strong>考据来源</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>瑞吉昂</strong></td>
+<td>海贸城邦，崇拜海豚</td>
+<td>诅咒泥板城徽+港口遗址鲸骨祭坛</td>
+</tr>
+<tr>
+<td><strong>提坦尼亚</strong></td>
+<td>游牧军事国，马镫发明者</td>
+<td>敌墓出土带马镫遗骸+岩画骑兵阵列</td>
+</tr>
+<tr>
+<td><strong>卡德米亚</strong></td>
+<td>山地中立国，盐矿垄断</td>
+<td>泥偶交易词+岩盐矿契约泥板</td>
+</tr>
+</tbody>
+</table>
+<h4 id="战争关键节点还原"><strong>战争关键节点还原</strong></h4>
+<ul>
+<li><p><strong>【战前导火索】</strong></p>
+<blockquote>
+<p><em>“提坦尼亚旱灾泥板”</em>（出土敌国粮仓）：“天神降怒！瑞吉昂奸商竟抬高三倍粮价！吾王剑指东方！”<br />
+<em>学者注：</em> 年轮气候学证实该年提坦尼亚遭遇 <strong>三百年一遇大旱</strong>，而瑞吉昂港口沉船中发现 <strong>囤积的腓尼基粮袋</strong>，印证经济战诱因。</p>
+</blockquote></li>
+<li><p><strong>【破城时刻】</strong></p>
+<blockquote>
+<p><em>“守将胫甲遗书”</em>（瑞吉昂城墙基）：“…南门被内奸开启。告诉菲卢斯，他刻在将军府门楣的小木船…我替他保住了。”<br />
+<em>碳14测定：</em> 此甲与 <strong>“诅咒泥板”</strong> 属于同一年代层。门楣残片确有小船刻痕，旁有 <strong>儿童身高划痕（约1.2米）</strong> ，推测为9岁泰奥菲卢斯所留。</p>
+</blockquote></li>
+<li><p><strong>【流亡规模】</strong></p>
+<blockquote>
+<p><em>“卡德米亚边境计数绳结”</em>（难民营管理者墓）：绳结总数 <strong>217个</strong>，旁注“瑞吉昂人”。<br />
+<em>学者测算：</em> 按绳结代表家庭单位（平均5人），难民约 <strong>1085人</strong>，占瑞吉昂战前人口 <strong>17%</strong> ，符合青铜时代城邦陷落后幸存比例。</p>
+</blockquote></li>
+</ul>
+<h4 id="注释童年侧写"><strong>注释:童年侧写</strong></h4>
+<blockquote>
+<p><strong>“泰奥菲卢斯”</strong> 这个名字，在瑞吉昂陷落前是蜜糖，陷落后即成毒药：</p>
+<ul>
+<li>他刻在将军府门楣的 <strong>小木船</strong>（守将遗书印证），原是为纪念首次随父出航</li>
+<li>流亡途中视若珍宝的 <strong>铜勺</strong>（母赠），丈量过霉麦、草根、乃至抢来的 <strong>“死人面包”</strong>（裹尸布日记）</li>
+<li>在卡德米亚被迫表演的 <strong>“海神之眼”</strong>（泥偶），实为换取盐粒的求生戏法</li>
+</ul>
+<p>当我们对比 <strong>敌国诅咒的恶毒</strong>、<strong>贵族批注的讥讽</strong>、<strong>难民绳结的冰冷数字</strong>——<br />
+那个偷祭坛葡萄的赤脚少年（陶片），最终在深渊（Ábyssos）神名中完成了对童年的复仇：<br />
+<strong>他把曾经遭受的饥馑，酿成了泛滥2400年的神酒；</strong><br />
+<strong>将铭刻耻辱的码头，化身为掷杯为乐的黄金宴厅。</strong></p>
+<p>但铜勺内侧的霉斑告诉我们：<br />
+<strong>考古学只相信食物残渣的证词。</strong></p>
+</blockquote>
+<h1 id="第二章---登神之路">第二章 - 登神之路</h1>
+<h4 id="成神初期-理想主义与权能暴走考据碎片"><strong>【成神初期·
+理想主义与权能暴走】考据碎片</strong></h4>
+<h4 id="十三重任务金碑-太阳神殿地基">十三重任务金碑 (太阳神殿地基)</h4>
+<p><em>载体：</em> 黑曜石碑镶金箔文字<br />
+<em>内容：</em><br />
+“第十二重：阿贝斯跃入沸腾的斯特罗姆火山，三昼夜搏杀岩浆恶龙。当他提着龙颅踏浪而归，海面凝结成酒红色水晶路！人们醉倒在这神迹之径上，欢呼随浪花飞溅：‘祂把地狱化作欢宴！’”<br />
+<em>学者注：</em> 战斗结果竟是狂欢之路。刻意规避第十三任务（疑涉禁忌）。</p>
+<p>更名诏书 (公元前1961年·神谕卷轴)
+<em>载体：</em> 浸染茜草汁的羊皮卷<br />
+<em>内容：</em><br />
+“…从今日起，泰奥菲卢斯之名永封。吾即 <strong>太阳神</strong> ——</p>
+<blockquote>
+<p><em>‘吾即光所不及处<br />
+醉者笑泪浇灌的荆棘王座<br />
+尔等供奉的蜜酒终将沉入吾之深喉<br />
+在永恒盛宴中…溺毙’</em>”<br />
+<em>学者注：</em> 4型人格的戏剧化更名。自比“深渊”暗示神性异化开端，酒神意象已现疯狂。</p>
+</blockquote>
+<h4 id="敌国投降书的泪痕">敌国投降书的泪痕</h4>
+<p><em>载体：</em> 青金石片镶嵌金箔条约<br />
+<em>内容：</em><br />
+“提坦尼亚臣服于太阳神阿贝斯。愿神光永熄复仇之火…（此处有水滴晕开金粉）…但求勿伤吾国孩童，如当日瑞吉昂之殇。”<br />
+<em>学者注：</em> 泪痕成分含 <strong>松脂与蜂蜜</strong>（王室熏香），实为卡德米亚公主侍女所留。条约要求“勿伤孩童”直指阿贝斯童年创伤，其统一诸国的手段恰是复刻自身苦难。</p>
+<h4 id="庆功宴酒瓮残片">庆功宴酒瓮残片</h4>
+<p><em>载体：</em> 彩陶碎片（宴厅遗址出土）<br />
+<em>图案：</em><br />
+阿贝斯脚踏提坦尼亚战旗，将红酒倾倒在跪拜贵族头顶，背景有模糊白影（卡兰纱？）浮于云端。<br />
+<em>学者注：</em> <strong>釉料检测出致幻植物成分</strong>。把酒欢庆实为精神操控，云端白影揭示欢宴背后的招魂执念。</p>
+<h4 id="夜巡卫兵皮带刻痕">夜巡卫兵皮带刻痕</h4>
+<p><em>载体：</em> 铜扣内侧针刻<br />
+<em>内容：</em><br />
+“冕下每夜抱空铠甲立于北塔楼（卡兰纱战死处），风吹铠甲呜咽如女子哭。今晨塔楼突然崩塌，冕下手中攥着带血月光石…”<br />
+<em>学者注：</em> 与卡德米亚王室记载“卡兰纱佩月光石甲胄战死”吻合。塔楼废墟中确发现 <strong>蓝色荧光碎石</strong>，证实招魂仪式启动。</p>
+<h4 id="提坦尼亚遗老墓志铭">提坦尼亚遗老墓志铭</h4>
+<p>“阿贝斯赐的‘和平酒’灼穿了我儿的胃…但至少他的眼睛没像瑞吉昂孩子那样被海鸥啄食。”<br />
+<em>——刻在投降将领墓碑背面</em></p>
+<p>（未完待续……）</p>
+</body>
+</html>
