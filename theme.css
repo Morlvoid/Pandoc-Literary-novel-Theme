@@ -78,7 +78,10 @@ body {
     font-size: 1rem;
     line-height: var(--line-height);
     color: var(--text-color);
-    background: var(--bg-color);
+    background-color: var(--bg-color);
+    background-image: radial-gradient(circle at 20% 40%, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
+    background-size: 20px 20px;
+    background-repeat: repeat;
     text-align: justify;
     word-wrap: break-word;
     text-align-last: auto;
@@ -122,66 +125,120 @@ h1:first-of-type {
 }
 
 
-/* ========== 标题块样式（Pandoc 自动生成） ========== */
+/* ========== 标题块样式（Pandoc 自动生成，模仿 .title-page 布局，黑色主题） ========== */
 
 #title-block-header {
     text-align: center;
     height: 100vh;
-    margin: 1rem 0;
-    /* 网格背景 */
-    background-image: radial-gradient(circle, #ddd 1px, transparent 1px);
+    margin: 0;
+    background-color: #111;
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
     background-size: 20px 20px;
     background-position: center;
-    /* 这里只使用网格背景，不再使用深色 */
-    background-color: var(--bg-color);
-    /* 可选，让网格叠加在背景色上 */
-    padding: 8rem 0;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    padding: 0;
 }
 
 
-/* 书名样式 */
+/* 书名样式（竖排） */
 
 #title-block-header h1.title {
-    font-size: 4rem;
+    order: 1;
+    font-size: 3rem;
     font-weight: 300;
-    letter-spacing: 0.2em;
-    color: var(--text-color);
-    /* 改为主题文字颜色，原来白色可能不显眼，根据背景调整 */
-    margin: 0 0 1rem 0;
+    letter-spacing: 0.5em;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    margin: 0 auto;
+    line-height: 1.4;
+    color: #fff;
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+    padding-right: 0.5em;
     position: relative;
-    padding-bottom: 1rem;
-    /* 为装饰图案留出空间 */
     display: inline-block;
+    margin-top: 15vh;
+    /* 向上调整，可根据需要微调 */
 }
 
 
-/* 书名下横线 */
+/* 书名上方的 ❦ 装饰 */
+
+#title-block-header h1.title::before {
+    content: "❦";
+    position: absolute;
+    top: -2.5em;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.5);
+    opacity: 0.8;
+    letter-spacing: 0;
+}
+
+
+/* 书名下方的横线 */
 
 #title-block-header h1.title::after {
     content: "";
     position: absolute;
-    bottom: 0;
+    bottom: -1.5em;
     left: 50%;
     transform: translateX(-50%);
-    width: 80px;
+    width: 60px;
     height: 1px;
-    background: var(--accent-border);
+    background: rgba(255, 255, 255, 0.3);
 }
 
 
-/* 书名旁边的植物装饰（右侧） */
+/* 副标题样式（位于书名下方） */
 
-#title-block-header h1.title::before {
+#title-block-header p.subtitle {
+    order: 2;
+    font-size: 1rem;
+    letter-spacing: 0.3em;
+    color: #ccc;
+    margin: 2em 0 0 0;
+    /* 与书名保持间距 */
+    text-transform: uppercase;
+    writing-mode: horizontal-tb;
+    position: relative;
+    display: inline-block;
+}
+
+
+/* 作者样式（位于页面底部） */
+
+#title-block-header p.author {
+    position: absolute;
+    bottom: 3cm;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    font-size: 1rem;
+    color: #ccc;
+    letter-spacing: 0.2em;
+    display: inline-block;
+    padding-bottom: 0.3em;
+    background: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3) 8px, transparent 8px, transparent 16px) bottom no-repeat;
+    background-size: 100% 3px;
+}
+
+
+/* 植物装饰（模仿 .title-page 的 .botanical-decoration） */
+
+#title-block-header::after {
     content: "";
     position: absolute;
-    right: -80px;
-    /* 根据需要调整位置 */
-    top: 50%;
-    transform: translateY(-50%);
-    width: 60px;
-    height: 60px;
-    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 100 Q30 80 20 50 T50 0 Q70 20 80 50 T50 100" fill="none" stroke="%23999" stroke-width="0.5"/></svg>');
+    bottom: 1cm;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 200px;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 100 Q30 80 20 50 T50 0 Q70 20 80 50 T50 100" fill="none" stroke="%23fff" stroke-width="0.5"/></svg>');
     background-size: contain;
     background-repeat: no-repeat;
     opacity: 0.4;
@@ -189,22 +246,7 @@ h1:first-of-type {
 }
 
 
-/* 作者样式 */
-
-#title-block-header p.author {
-    font-size: 1rem;
-    color: var(--dark-gray);
-    margin-top: 10rem;
-    margin-bottom: 6rem;
-    position: relative;
-    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 100 Q30 80 20 50 T50 0 Q70 20 80 50 T50 100" fill="none" stroke="%23999" stroke-width="0.5"/></svg>');
-}
-
-
-/* 封面页样式（手动封面，与标题块可并存） */
-
-
-/* 封面页样式增强版 */
+/* ========== 手动封面页样式（浅色文艺版）========== */
 
 .title-page {
     height: 100vh;
@@ -218,12 +260,9 @@ h1:first-of-type {
     background-image: radial-gradient(circle, #e0e0e0 1px, transparent 1px);
     background-size: 20px 20px;
     background-position: center;
-    /* 添加微妙阴影 */
+    background-color: var(--bg-color);
     box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.02);
 }
-
-
-/* 书名外层容器，用于添加装饰 */
 
 .title-page .title {
     font-size: 2.25rem;
@@ -240,9 +279,6 @@ h1:first-of-type {
     display: inline-block;
 }
 
-
-/* 书名上方增加一个小装饰（可选） */
-
 .title-page .title::before {
     content: "❦";
     position: absolute;
@@ -255,9 +291,6 @@ h1:first-of-type {
     letter-spacing: 0;
 }
 
-
-/* 书名下方增加横线装饰（可选） */
-
 .title-page .title::after {
     content: "";
     position: absolute;
@@ -268,9 +301,6 @@ h1:first-of-type {
     height: 1px;
     background: var(--accent-border);
 }
-
-
-/* 副标题样式（原本就有，但可微调） */
 
 .title-page .subtitle {
     font-size: 2rem;
@@ -283,9 +313,6 @@ h1:first-of-type {
     display: inline-block;
 }
 
-
-/* 作者名下方增加波浪条纹 */
-
 .title-page .author {
     position: absolute;
     bottom: 2cm;
@@ -294,26 +321,21 @@ h1:first-of-type {
     letter-spacing: 0.2em;
     display: inline-block;
     padding-bottom: 0.3em;
-    background: repeating-linear-gradient( 45deg, #e0e0e0, #e0e0e0 8px, transparent 8px, transparent 16px) bottom no-repeat;
+    background: repeating-linear-gradient(45deg, #e0e0e0, #e0e0e0 8px, transparent 8px, transparent 16px) bottom no-repeat;
     background-size: 100% 3px;
 }
 
-
-/* 在封面底部添加另一个植物装饰（可选，与手动封面的 .botanical-decoration 呼应） */
-
-.title-page::after {
-    content: "";
+.title-page .botanical-decoration {
     position: absolute;
     bottom: 1cm;
     left: 50%;
     transform: translateX(-50%);
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
+    opacity: 0.3;
     background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 100 Q30 80 20 50 T50 0 Q70 20 80 50 T50 100" fill="none" stroke="%23999" stroke-width="0.5"/></svg>');
     background-size: contain;
     background-repeat: no-repeat;
-    opacity: 0.2;
-    pointer-events: none;
 }
 
 
@@ -381,7 +403,6 @@ h1:first-of-type {
     display: flex;
     align-items: baseline;
     font-size: 1.2rem;
-    /* 目录字体 1.2rem */
 }
 
 #TOC a,
@@ -550,7 +571,6 @@ blockquote p {
 .chapter-number {
     font-family: var(--font-mono);
     font-size: 0.9rem;
-    /* 修改为 0.9rem */
     letter-spacing: 0.2em;
     margin-bottom: 0.5em;
     display: block;
@@ -581,6 +601,7 @@ blockquote p {
 @media print {
     body {
         background: white;
+        background-image: none;
     }
     .no-break {
         page-break-inside: avoid;
@@ -613,14 +634,16 @@ blockquote p {
 /* 侧边栏装饰 */
 
 .margin-note {
-    position: absolute;
-    right: -1.5cm;
+    position: relative;
+    float: right;
+    margin-right: -1.5cm;
     width: 1cm;
     font-size: 0.5rem;
     color: var(--mid-gray);
     writing-mode: vertical-rl;
     text-orientation: mixed;
     letter-spacing: 0.2em;
+    display: none;
 }
 
 
@@ -659,11 +682,9 @@ a:hover {
 table {
     border-collapse: collapse;
     margin: 2em auto;
-    /* 上下外边距，左右自动居中 */
     max-width: 100%;
     overflow-x: auto;
     display: block;
-    /* 防止长表格溢出 */
     font-size: 0.625rem;
 }
 
@@ -673,7 +694,6 @@ td {
     text-align: left;
     border-bottom: 1px solid var(--light-gray);
     border: 1px solid var(--light-gray);
-    /* 增加边框，更清晰 */
 }
 
 th {
@@ -746,19 +766,144 @@ pre {
 }
 
 
-/* 封面植物装饰 */
+/* 版权页样式 */
 
-.botanical-decoration {
+.copyright-page {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    page-break-after: always;
+    background: var(--bg-color);
+    color: var(--text-color);
+    font-size: 0.85rem;
+    line-height: 1.8;
+    padding: 2cm;
+}
+
+.copyright-page .publisher {
+    font-family: var(--font-sans);
+    letter-spacing: 0.1em;
+    margin-bottom: 2em;
+    font-size: 0.9rem;
+}
+
+.copyright-page .info {
+    border-top: 1px solid var(--light-gray);
+    border-bottom: 1px solid var(--light-gray);
+    padding: 1em 0;
+    margin: 1em 0;
+    font-size: 0.75rem;
+}
+
+.copyright-page .isbn {
+    font-family: var(--font-mono);
+    margin-top: 2em;
+}
+
+
+/* 后记/尾声样式 */
+
+.epilogue {
+    page-break-before: always;
+    text-align: center;
+    margin: 20% auto;
+    max-width: 80%;
+    font-size: 1.1rem;
+    line-height: 2;
+    color: var(--text-color);
+}
+
+.epilogue .epilogue-title {
+    font-size: 1.5rem;
+    letter-spacing: 0.2em;
+    margin-bottom: 2em;
+    position: relative;
+    display: inline-block;
+}
+
+.epilogue .epilogue-title::after {
+    content: "";
     position: absolute;
-    bottom: 0cm;
+    bottom: -0.5em;
     left: 50%;
     transform: translateX(-50%);
-    width: 200px;
-    /* 修改为 200px */
-    height: 200px;
-    opacity: 0.3;
+    width: 60px;
+    height: 1px;
+    background: var(--accent-border);
+}
+
+
+/* 致谢样式 */
+
+.acknowledgments {
+    page-break-before: always;
+    text-align: center;
+    margin: 20% auto;
+    max-width: 70%;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: var(--dark-gray);
+}
+
+.acknowledgments .ack-title {
+    font-size: 1.2rem;
+    letter-spacing: 0.2em;
+    margin-bottom: 1.5em;
+    font-family: var(--font-sans);
+    text-transform: uppercase;
+}
+
+
+/* 末页/封底（黑色风格，与封面呼应） */
+
+.end-page {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    page-break-after: always;
+    position: relative;
+    background-color: #111;
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+    color: #fff;
+}
+
+.end-page .ending-text {
+    font-size: 1.5rem;
+    letter-spacing: 0.2em;
+    color: #fff;
+    margin-bottom: 2em;
+    font-family: var(--font-serif);
+    line-height: 1.8;
+}
+
+.end-page .copyright {
+    position: absolute;
+    bottom: 2cm;
+    font-size: 0.75rem;
+    color: #ccc;
+    letter-spacing: 0.1em;
+}
+
+.end-page::after {
+    content: "";
+    position: absolute;
+    bottom: 1cm;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 100px;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 100 Q30 80 20 50 T50 0 Q70 20 80 50 T50 100" fill="none" stroke="%23fff" stroke-width="0.5"/></svg>');
     background-size: contain;
     background-repeat: no-repeat;
+    opacity: 0.3;
+    pointer-events: none;
 }
 
 
@@ -793,6 +938,8 @@ pre {
     body> :not(.title-page):not(.dedication):not(#TOC):not(.toc):not(#title-block-header) {
         padding-left: 1cm;
         padding-right: 1cm;
+        overflow-x: clip;
+        /* 或 overflow-x: hidden */
     }
     /* 手机端表格字体略小，滚动友好 */
     table {
@@ -804,5 +951,10 @@ pre {
     th,
     td {
         padding: 0.5em;
+    }
+    .margin-note {
+        display: none;
+        /* 移动端隐藏 */
+        /* 或改为相对定位：right: 0; 等 */
     }
 }
