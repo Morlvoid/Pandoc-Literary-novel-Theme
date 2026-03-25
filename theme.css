@@ -957,4 +957,12 @@ pre {
         /* 移动端隐藏 */
         /* 或改为相对定位：right: 0; 等 */
     }
+    .dedication {
+        padding: 0 1rem;
+        /* 减小容器左右边距 */
+    }
+    .dedication p {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
 }
