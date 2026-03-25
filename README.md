@@ -5,7 +5,8 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-
+小说格式演示：[http://pandoc-theme.morlvoid.pro/](http://pandoc-theme.morlvoid.pro/)
+或查看“演示副本.png”
 
 ## 特性
 
@@ -130,7 +131,7 @@ pandoc 01-序.md 02-第一章.md 03-第二章.md 04-尾声.md \
 
 ### 演示页面
 
-![](https://www.blog-image.morlvoid.pro/blog/20260324070056008.png)
+点击可查看“演示副本.png”
 
 ------
 
