@@ -965,4 +965,33 @@ pre {
         padding-left: 1rem;
         padding-right: 1rem;
     }
+    /* 目录容器宽度放宽 */
+    #TOC ul,
+    .toc ul {
+        width: 90%;
+        /* 原来为 60%，手机端太窄 */
+        margin: 0 auto;
+        padding: 0;
+    }
+    /* 目录项字体缩小，行距紧凑 */
+    #TOC li,
+    .toc li {
+        font-size: 0.9rem;
+        /* 原来 1.2rem，太大 */
+        margin: 1em 0;
+        /* 适当减少上下间距 */
+    }
+    /* 链接文字允许自动换行，避免溢出 */
+    #TOC a,
+    .toc a {
+        word-break: break-word;
+        white-space: normal;
+        display: inline;
+        /* 原来 flex 可能导致宽度计算异常 */
+    }
+    /* 去除页码引导线（可选，移动端常不显示页码） */
+    #TOC a::after,
+    .toc a::after {
+        display: none;
+    }
 }
